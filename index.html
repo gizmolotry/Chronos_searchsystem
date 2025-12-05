@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chronos OCR Viewer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f0f0f;
+      color: #eee;
+    }
+
+    .layout {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 320px;
+      background: #151515;
+      border-right: 1px solid #333;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .sidebar h1 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #f4c58a;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.35rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.35rem 0.5rem;
+      text-decoration: none;
+      color: #d0d0d0;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .sidebar a:hover {
+      background: #272727;
+      color: #fff;
+    }
+
+    .viewer {
+      flex: 1;
+    }
+
+    .viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- LEFT: list of OCR pages -->
+    <aside class="sidebar">
+      <h1>Chronos Pages</h1>
+      <ul>
+        <!-- index.html is at the same level as /upload/ -->
+        <li><a href="upload/gaa_search.html" target="viewerFrame">
+          GAA – search page
+        </a></li>
+
+        <li><a href="upload/gaa-founded-native-games_20251205-082249.html" target="viewerFrame">
+          GAA – founded native games
+        </a></li>
+
+        <li><a href="upload/hurling-championship_20251205-082310.html" target="viewerFrame">
+          Hurling championship
+        </a></li>
+
+        <li><a href="upload/gaelic-football_20251205-082333.html" target="viewerFrame">
+          Gaelic football
+        </a></li>
+
+        <li><a href="upload/foreign-games-ban-rugby-soccer_20251205-082356.html" target="viewerFrame">
+          Foreign games ban – rugby &amp; soccer
+        </a></li>
+
+        <li><a href="upload/munster-championship_20251205-082416.html" target="viewerFrame">
+          Munster championship
+        </a></li>
+
+        <li><a href="upload/all-ireland-final-champions_20251205-082441.html" target="viewerFrame">
+          All-Ireland final champions
+        </a></li>
+
+        <li><a href="upload/athletics-running-jumping_20251205-082501.html" target="viewerFrame">
+          Athletics – running &amp; jumping
+        </a></li>
+
+        <li><a href="upload/handball_20251205-082526.html" target="viewerFrame">
+          Handball
+        </a></li>
+
+        <li><a href="upload/camogie-ladies-hurling_20251205-082552.html" target="viewerFrame">
+          Camogie / ladies’ hurling
+        </a></li>
+
+        <li><a href="upload/club-team-parish-players_20251205-082615.html" target="viewerFrame">
+          Club team parish players
+        </a></li>
+
+        <li><a href="upload/national-spirit-irish-manhood_20251205-082637.html" target="viewerFrame">
+          National spirit / Irish manhood
+        </a></li>
+
+        <li><a href="upload/cycling-bicycle-race_20251205-082702.html" target="viewerFrame">
+          Cycling / bicycle race
+        </a></li>
+      </ul>
+    </aside>
+
+    <!-- RIGHT: iframe that shows the selected page -->
+    <main class="viewer">
+      <!-- Default page shown on load -->
+      <iframe
+        name="viewerFrame"
+        src="upload/gaa_search.html">
+      </iframe>
+    </main>
+  </div>
+</body>
+</html>
